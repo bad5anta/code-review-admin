@@ -3,16 +3,16 @@ import './style.css';
 
 class List extends Component {
   render() {
-    const { users } = this.props;
+    const { users, keyWord } = this.props;
 
     const content = users.length === 0
-      ? <li>No matches!</li>
+      ? <li>{keyWord !== '' ? 'No matches!' : 'No data yet'}</li>
       : (
         users.map((user, i) => {
-          return <li key={i}><a href="">{user}</a></li>
+          return <li key={user.id}><a href="">{user.email}</a></li>
         })
       )
-      console.log('content', users);
+
     return (
       <ul className="userList">
         {content}

@@ -1,16 +1,14 @@
-import { observable, computed } from "mobx";
-import { requestToken } from '../services/users';
+import { observable, action } from "mobx";
+import { requestUsers } from '../services/users';
 
 class UserStore {
-  users = observable(['user1', 'user2', 'user3', 'user4']);
+  users = observable([]);
 
-  something = computed(() => {
-    return this.users = [...this.users, 123]
+  loadUsers =  action(async () => {
+    const users = await requestUsers();
+
+    this.users = users;
   })
-
-  loadUsers = async () => {
-    const response = await requestToken();
-  }
 }
 
 export default new UserStore();
