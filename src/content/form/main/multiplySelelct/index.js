@@ -6,12 +6,10 @@ import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 
 const FLAVOURS = [
-	{ label: 'Chocolate', value: 'chocolate' },
-	{ label: 'Vanilla', value: 'vanilla' },
-	{ label: 'Strawberry', value: 'strawberry' },
-	{ label: 'Caramel', value: 'caramel' },
-	{ label: 'Cookies and Cream', value: 'cookiescream' },
-	{ label: 'Peppermint', value: 'peppermint' },
+	{ label: 'Ruby', value: 'ruby' },
+	{ label: 'JavaScript', value: 'javascript' },
+	{ label: 'React', value: 'react' },
+	{ label: 'Vue', value: 'vue' },
 ];
 
 const WHY_WOULD_YOU = [
