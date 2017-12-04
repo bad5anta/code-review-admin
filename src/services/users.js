@@ -1,21 +1,16 @@
-export const requestToken = async () => {
-  const url = 'https://code-review.herokuapp.com/api/v1/sessions'
+export const requestUsers = async () => {
+  const url = 'https://code-review.herokuapp.com/api/v1/users'
 
-  const users = await fetch(url, {
-    method: 'POST',
+  const token = 'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7ImlkIjoxLCJwYXNzd29yZCI6IiQyYSQxMCRFYUJFQnNGRy85VUhVRS83V3RvTjFlZ01yYS5KQUN4M1ZTT09vM0hPZHVYaUJqbHZCbEY5NiJ9fQ.83p-nCLcUZtqkWz09H-AfFIQM0aZsPopknawGIKpGpA'
+
+  const response = await fetch(url, {
+    method: 'GET',
     headers: {
-      'Content-Type': 'application/json'
+      'Authorization': token
     },
-    mode: 'no-cors',
-    body: JSON.stringify(
-        {
-          "user": {
-        		"email": "user@example.com",
-        		"password": "password"
-	         }
-         }
-     )
   });
+
+  const users = await response.json();
 
   return users;
 }

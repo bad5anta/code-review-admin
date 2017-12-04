@@ -1,19 +1,15 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react';
-import { FormControl, FormGroup } from 'react-bootstrap';
+import { FormControl } from 'react-bootstrap';
 import List from './list'
 import UsersStore from '../../stores/UsersStore';
 import './style.css'
 
 
-class UsersContainer extends Component {
+const UsersContainer = observer(class UsersContainer extends Component {
 
   state = {
     keyWord: ''
-  }
-
-  componentWillReceiveProps = (nextProps) => {
-    this.setState({ users: nextProps.users })
   }
 
   componentDidMount() {
@@ -26,31 +22,33 @@ class UsersContainer extends Component {
     this.setState({ keyWord: value })
   }
 
-  renderUsersList = () => {
-    const { users } = UsersStore;
+  renderUsersList = (users) => {
     const { keyWord } = this.state;
 
     const filtered = users
       .filter(user => {
-        return keyWord === '' || user.includes(keyWord);
+        return keyWord === '' || user.email.includes(keyWord);
       })
 
-      return <List users={filtered}/>
+      return <List users={filtered} keyWord={keyWord}/>
   }
 
   render() {
+    const { users} = UsersStore;
     return (
       <div className="users-container">
         <div className="search-input">
-          <input
+          <FormControl
+            type="text"
+            className="keyword-input"
             value={this.state.keyWord}
             onChange={this.handleFilter}
-          />
+            placeholder="Enter keyword"/>
         </div>
-        {this.renderUsersList()}
+        {this.renderUsersList(users)}
       </div>
     )
   }
-}
+})
 
-export default observer(UsersContainer);
+export default UsersContainer;
