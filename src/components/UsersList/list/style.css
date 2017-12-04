@@ -12,7 +12,10 @@
   padding: 10px;
   text-decoration: none;
   font-size: 14px;
-  color: #000; }
+  color: #000;
+  word-wrap: wrap;
+  text-overflow: ellipsis;
+  overflow: hidden; }
   .userList a:hover {
     text-decoration: underline;
     background: #c5e6ef; }

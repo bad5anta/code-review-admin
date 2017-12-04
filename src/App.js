@@ -56,8 +56,11 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <UsersList users={users} requestUsers={this.requestUsers} requestUser={this.requestUser} />
-        <Content subs={subs} user={user} master={master} />
+
+        <div className="AppContainer">
+          <UsersList users={users} requestUsers={this.requestUsers} requestUser={this.requestUser} />
+          <Content subs={subs} user={user} master={master} />
+        </div>
       </div>
     );
   }
