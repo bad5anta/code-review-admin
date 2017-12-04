@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
-import './style.css';
+import Main from './main';
+import './style.scss';
 
-class Content extends Component {
+class Form extends Component {
   render() {
     return (
-      <form>
-          <header>Form</header>
-          <div className="User">
-            <input type="text">
-            <input type="text">
-          </div>
-      </form>
+      <div>
+        <Main/>
+      </div>
     );
   }
 }
 
-export default Content;
+export default Form;

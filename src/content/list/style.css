@@ -1,0 +1,15 @@
+.userList {
+  width: 30%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: #ecf0f1; }
+
+.userList a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #000; }
+  .userList a:hover {
+    text-decoration: underline; }
