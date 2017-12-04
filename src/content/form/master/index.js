@@ -5,9 +5,10 @@ import './style.css';
 
 class Master extends Component {
   render() {
+    const { master } = this.props;
     return (
       <FormGroup>
-        <DropdownSelect />
+        <DropdownSelect master={master} />
       </FormGroup>
     );
   }

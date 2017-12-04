@@ -33,15 +33,28 @@ var dropdownSelect = createClass({
 	renderValue: function(option) {
 		return <strong style={{ color: option.color }}>{option.label}</strong>;
 	},
+	renderSubs: (subs) => {
+		console.log('this.subs', subs)
+		return (
+			subs.map((sub, i) => {
+				return <div>{sub.email}</div>
+			})
+		)
+	},
 	render: function() {
 		var options = [
-			{ label: 'Basic customer support', value: 'basic', color: '#E31864' },
-			{ label: 'Premium customer support', value: 'premium', color: '#6216A3' },
-			{ label: 'Pro customer support', value: 'pro', disabled: true, link: this.renderLink() },
+			{ label: 'User 2', value: 'basic' },
+			{ label: 'User 3', value: 'premium', },
+			{ label: 'User 4', value: 'pro', },
 		];
+		const { subs } = this.props;
+		this.renderSubs(subs);
 		return (
 			<div className="dropdownSection section">
 				<h3 className="section-heading">Subscription</h3>
+				<div>
+					{this.renderSubs(subs)}
+				</div>
 				<div className="dropdownSelectContainer">
 					<Select
 						className="dropdownSelect"

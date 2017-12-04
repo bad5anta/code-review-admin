@@ -35,9 +35,9 @@ var dropdownSelect = createClass({
 	},
 	render: function() {
 		var options = [
-			{ label: 'Basic customer support', value: 'basic', color: '#E31864' },
-			{ label: 'Premium customer support', value: 'premium', color: '#6216A3' },
-			{ label: 'Pro customer support', value: 'pro', disabled: true, link: this.renderLink() },
+			{ label: 'User 2', value: 'basic' },
+			{ label: 'User 3', value: 'premium', },
+			{ label: 'User 4', value: 'pro', },
 		];
 		return (
 			<div className="dropdownSection section">

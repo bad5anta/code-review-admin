@@ -5,9 +5,11 @@ import './style.css';
 
 class Subscription extends Component {
   render() {
+    const { subs } = this.props;
+
     return (
       <FormGroup>
-        <DropdownSelect />
+        <DropdownSelect subs={subs} />
       </FormGroup>
     );
   }

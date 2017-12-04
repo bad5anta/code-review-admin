@@ -56,8 +56,8 @@ var MultiSelectField = createClass({
 					multi
 					onChange={this.handleSelectChange}
 					options={options}
-					placeholder="Select your favourite(s)"
-                    removeSelected={this.state.removeSelected}
+					placeholder="Choose skills"
+          removeSelected={this.state.removeSelected}
 					rtl={this.state.rtl}
 					simpleValue
 					value={value}

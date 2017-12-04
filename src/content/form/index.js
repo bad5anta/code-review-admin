@@ -9,14 +9,15 @@ import './style.scss';
 
 class Form extends Component {
   render() {
+    const { user, subs, master } = this.props;
     return (
       <div>
-        <Main/>
-        <Subscription/>
-        <Master/>
+        <Main user={user}/>
+        <Subscription subs={subs}/>
+        <Master master={master}/>
         <Slave/>
-        <Search1/>
-        <Search2/>
+        {/* <Search1/>
+        <Search2/> */}
       </div>
     );
   }

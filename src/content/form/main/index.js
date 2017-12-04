@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import { observer, Observer } from 'mobx-react';
 import { FormGroup,ControlLabel,FormControl } from 'react-bootstrap';
 import MultiplySelelct from './multiplySelelct';
 import './style.css';
 
 class Main extends Component {
   render() {
+    const { user } = this.props;;
+    console.log('user', user)
+
     return (
       <form>
         <div className="User">
@@ -13,7 +17,8 @@ class Main extends Component {
             <ControlLabel>User:</ControlLabel>
             <FormControl
               type="text"
-              placeholder="Enter text"/>
+              value={user && user.name}
+              placeholder="User name"/>
             <FormControl.Feedback />
             <MultiplySelelct />
           </FormGroup>
@@ -24,4 +29,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default observer(Main);

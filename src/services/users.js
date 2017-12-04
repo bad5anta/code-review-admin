@@ -11,6 +11,6 @@ export const requestUsers = async () => {
   });
 
   const users = await response.json();
-
+  console.log('users', users);
   return users;
 }
