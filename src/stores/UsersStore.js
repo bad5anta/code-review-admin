@@ -1,14 +1,15 @@
 import { observable, computed } from "mobx";
+import { requestToken } from '../services/users';
 
 class UserStore {
-  users = observable(['1', 2, 3, 4]);
+  users = observable(['user1', 'user2', 'user3', 'user4']);
 
   something = computed(() => {
     return this.users = [...this.users, 123]
   })
 
-  loadUsers = () => {
-    
+  loadUsers = async () => {
+    const response = await requestToken();
   }
 }
 

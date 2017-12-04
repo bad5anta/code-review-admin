@@ -1,5 +1,6 @@
 export const requestToken = async () => {
-  const url = 'https://code-review.herokuapp.com/api/v1/sessions'
+  const url = 'https://code-review.herokuapp.com/api/v1/sessions';
+
 
   const users = await fetch(url, {
     method: 'POST',

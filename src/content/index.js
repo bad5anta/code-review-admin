@@ -7,7 +7,6 @@ class Content extends Component {
   render() {
     return (
       <main className="content">
-          <List />
           <Form />
       </main>
     );
