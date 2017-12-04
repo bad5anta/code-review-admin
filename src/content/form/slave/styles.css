@@ -1,0 +1,4 @@
+.dropdownSection {
+    display: flex;
+    flex-direction: column;
+}
