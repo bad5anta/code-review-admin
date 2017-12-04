@@ -1,6 +1,8 @@
 .headerTop {
   display: flex;
+  margin-bottom: 20px;
   padding: 10px;
   background-color: #27ae60;
   color: #fff;
+  flex-basis: 100%;
 }
