@@ -5,7 +5,11 @@ class Content extends Component {
   render() {
     return (
       <form>
-          Test
+          <header>Form</header>
+          <div className="User">
+            <input type="text">
+            <input type="text">
+          </div>
       </form>
     );
   }
