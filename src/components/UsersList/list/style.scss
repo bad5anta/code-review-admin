@@ -11,6 +11,9 @@
     text-decoration: none;
     font-size: 14px;
     color: #000;
+    word-wrap: wrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 
     &:hover {
         text-decoration: underline;
